@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+<!--    Company Name-->
+    <TextView
+        android:id="@+id/txt_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pt"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+<!--    Location-->
+
+    <ImageView
+        android:id="@+id/waypoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_location_pin_24"
+        android:layout_below="@id/txt_pt"
+        android:layout_marginTop="8dp"
+        />
+    
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sleman"
+        android:layout_toEndOf="@+id/waypoint"
+        android:layout_toRightOf="@+id/waypoint"
+        android:layout_alignTop="@+id/waypoint"
+        android:layout_marginLeft="8dp"
+        android:textSize="17sp"
+        />
+
+<!--    <TextView-->
+<!--        android:id="@+id/location"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/sleman"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:drawableStart="@drawable/baseline_location_pin_24"-->
+<!--        android:layout_below="@id/txt_pt"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_alignParentStart="true"/>-->
+
+<!--    Information-->
+    <LinearLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle"
+        android:padding="16dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_below="@+id/location"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/title_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Infomrasi perubahan data katalog"
+            android:textSize="14sp"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/pembaruan_terakhir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan Terakhir: "
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/pembaruan_terakhir_tgl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pembaruan_terakhir"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/pembaruan_selanjutnya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan Selanjutnya: "
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/pembaruan_selanjutnya_tgl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pembaruan_selanjutnya"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    Button 1-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoContainer"
+        android:layout_marginHorizontal="20sp"
+        android:layout_centerInParent="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnKatalogTender"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="16dp"
+            android:cardElevation="4dp"
+            android:radius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_manage_search_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Katalog Tender"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Second Button: Tender Tersimpan -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnTenderTersimpan"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignTop="@id/btnKatalogTender"
+
+            android:layout_alignParentRight="true"
+            android:cardElevation="4dp"
+            android:radius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_bookmark_added_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tender Tersimpan"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Third Button: Laporan Statistik -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnLaporanStatistik"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/btnKatalogTender"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:cardElevation="4dp"
+            android:radius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_insert_chart_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laporan Statistik"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fourth Button: Pengaturan -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnPengaturan"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignTop="@id/btnLaporanStatistik"
+            android:cardElevation="4dp"
+            android:radius="8dp"
+            android:layout_alignParentRight="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_settings_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengaturan"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>
